@@ -8,6 +8,7 @@
 					max-height="60"
 					max-width="60"
 					src="./assets/whitelogo.png"
+					alt="logo"
 				></v-img>
 				<v-img
 					v-else-if="theme.global.name.value === 'light'"
@@ -15,6 +16,7 @@
 					max-height="60"
 					max-width="60"
 					src="./assets/logo.png"
+					alt="logo"
 				></v-img>
 			</v-toolbar-title>
 			<v-switch
@@ -104,6 +106,7 @@
 						<v-img
 							class="img-footer"
 							src="./assets/whitelogo.png"
+							alt="logo"
 						></v-img>
 						<div class="pl-3">
 							<p class="text-body-2">Ciesielska 2/lok.12</p>

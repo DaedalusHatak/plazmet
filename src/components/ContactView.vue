@@ -36,11 +36,12 @@
 						eager
 						contain
 						:src="'../assets/' + img"
+						alt="logo"
 					></v-img
 				></p>
 			</v-container>
 			<v-container class="d-none d-sm-block">
-				<v-img eager contain :src="'../assets/' + img"></v-img>
+				<v-img eager contain alt="logo" :src="'../assets/' + img"></v-img>
 			</v-container>
 		</v-col>
 

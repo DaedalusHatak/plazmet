@@ -11,7 +11,7 @@
             <!-- Miniatura zdjęcia -->
             <v-img
               :src="image.src"
-              alt="Gallery Image"
+               alt="Zdjęcie maszyny/elementów"
               height="400px" 
               @click="openDialog(index)"
             >
