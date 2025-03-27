@@ -24,7 +24,7 @@
 		<p class="text-h5 text-md-h5 pb-8 word-break">
 			<a href="mailto:uslugiwoda3d@wp.pl">USLUGIWODA3D@WP.PL</a></p
 		>
-		<p class="text-red-darken-2"
+		<p class="text-gray"
 			>Próbki wycięcia nietypowego materiału wykonamy za darmo</p
 		>
 	</v-container>
@@ -69,6 +69,10 @@ const material = [
 	width:600px;
 }
 }
+.text-gray{
+
+	color:rgb(189, 189, 189)
+}
 .subheader{
 	font-size: 32px;
 	
@@ -84,7 +88,7 @@ const material = [
 }
 
 a {
-	color: #e25a00;
+	color:orange;
 	
 }
 </style>

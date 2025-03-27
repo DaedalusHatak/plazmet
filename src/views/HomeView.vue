@@ -5,12 +5,16 @@
 		<p class="text-h6 pa-12">
 		  Cięcie materiałów metodą tlenową i wodną (WaterJet) – precyzyjne, szybkie i efektywne rozwiązania.
 		</p>
+		<p class="text-h6 pa-12">
+		 Cięcie oraz zacinanie pod kątem 45° płytek, kamienia i innych!
+		</p>
+
 	  </HeaderBackground>
 	</v-container>
   
 	<v-container class="padding">
 	  <p class="text-h6 pa-0 py-12 text-md-h5 pa-sm-12">
-		Firma <b>Plazmet</b> specjalizuje się w dostarczaniu kompleksowych usług cięcia tlenem oraz wodą (waterjet) dla przemysłu. Dzięki innowacyjnym technologiom, nowoczesnym maszynom i zespołowi wykwalifikowanych specjalistów, oferujemy wysokiej jakości usługi cięcia, które spełniają nawet najbardziej wymagające standardy.
+		Firma <b>Plazmet</b> specjalizuje się w dostarczaniu kompleksowych usług cięcia tlenem, wodą (waterjet) oraz obróbką stali dla przemysłu oraz klientów indywidualnych. Dzięki innowacyjnym technologiom, nowoczesnym maszynom i zespołowi wykwalifikowanych specjalistów, oferujemy wysokiej jakości usługi cięcia, które spełniają nawet najbardziej wymagające standardy.
 	  </p>
   
 	  <p class="text-h6 pa-0 py-12">
@@ -28,7 +32,7 @@
 	</v-container>
   
 	<v-container class="py-12 px-12 bg-dark">
-	  <h3 class="text-h4 text-center text-white">Nasza oferta</h3>
+	  <h2 class="text-h4 text-center text-white">Nasza oferta</h2>
 	  <v-row class="text-center">
 		<v-col cols="12" sm="6" md="4">
 		  <v-card class="mx-auto my-4" color="#994739" dark>
@@ -45,7 +49,7 @@
   
 		<v-col cols="12" sm="6" md="4">
 		  <v-card class="mx-auto my-4" color="#51515F" dark>
-			<v-card-title class="text-h5">Cięcie WaterJet</v-card-title>
+			<v-card-title class="text-h5">Cięcie Wodą</v-card-title>
 			<v-card-subtitle class="text-h6">Precyzyjne cięcie materiałów takich jak kamień, ceramika, tworzywa sztuczne</v-card-subtitle>
 			<v-card-text>
 			  Dzięki metodzie cięcia wodą (waterjet), jesteśmy w stanie ciąć materiały o różnej twardości i grubości, uzyskując perfekcyjne krawędzie bez wytwarzania wysokiej temperatury.
@@ -87,7 +91,38 @@
   <script setup>
 	// Komponenty
 	import HeaderBackground from '../components/HeaderBackground.vue';
-  
+	import {onMounted} from 'vue'
+	onMounted(() => {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Cięcie wodą i tlenem",
+    "provider": {
+      "@type": "Organization",
+      "name": "Plazmet",
+      "url": "https://www.plazmet.com.pl"
+    },
+    "description": "Profesjonalne cięcie materiałów metodą wodną oraz tlenową. Precyzyjne cięcie stali, granitu, drewna i innych materiałów.",
+    "areaServed": {
+      "@type": "Place",
+      "name": "Polska"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ul. Ciesielska 2/lok.12",
+      "addressLocality": "Białystok",
+      "addressRegion": "Podlaskie",
+      "postalCode": "15-542",
+      "addressCountry": "PL"
+    }
+  }
+
+  // Dodanie JSON-LD do nagłówka
+  const script = document.createElement('script')
+  script.type = 'application/ld+json'
+  script.innerHTML = JSON.stringify(jsonLd)
+  document.head.appendChild(script)
+})
 	const start = 'Plazmet – Profesjonalne usługi cięcia!';
   
 	// Przywrócenie wysokości ekranu

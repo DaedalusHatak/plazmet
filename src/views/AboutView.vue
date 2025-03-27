@@ -24,8 +24,8 @@ const waterjet = ['+48 732 721 521', 'uslugiwoda3d@wp.pl'];
 const plazmet = ['+48 602 615 104', 'plazmetbialystok@o2.pl'];
 const theme = useTheme();
 let img;
-const img1 ='plazmet.png';
-const img2 = 'plazmet.png';
+const img1 ='whitelogo.png';
+const img2 = 'logo.png';
 watch(watching);
 
 function watching()

@@ -53,6 +53,40 @@
   import HeaderBackground from '../components/HeaderBackground.vue';
   import CarouselImage from '../components/CarouselImage.vue';
   import MaterialList from '../components/MaterialList.vue';
+  import {onMounted} from 'vue'
+
+  onMounted(() => {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Cięcie wodą",
+    "provider": {
+      "@type": "Organization",
+      "name": "Plazmet",
+      "url": "https://www.plazmet.com.pl"
+    },
+    "description": "Profesjonalne cięcie materiałów metodą wodną. Precyzyjne cięcie stali, granitu, drewna, płytek.",
+    "areaServed": {
+      "@type": "Place",
+      "name": "Polska"
+    },
+	"address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ul. Ciesielska 2/lok.12",
+    "addressLocality": "Białystok",
+    "addressRegion": "Podlaskie",
+    "postalCode": "15-542",
+    "addressCountry": "PL"
+  },
+  }
+
+  // Dodanie JSON-LD do nagłówka
+  const script = document.createElement('script')
+  script.type = 'application/ld+json'
+  script.innerHTML = JSON.stringify(jsonLd)
+  document.head.appendChild(script)
+})
+
   
   const start = 'Profesjonalne cięcie wodą!';
   

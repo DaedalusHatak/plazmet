@@ -5,15 +5,15 @@
 				><v-img
 					v-if="theme.global.name.value === 'dark'"
 					contain
-					max-height="64"
-					max-width="64"
-					src="./assets/output-onlinepngtools.png"
+					max-height="60"
+					max-width="60"
+					src="./assets/whitelogo.png"
 				></v-img>
 				<v-img
 					v-else-if="theme.global.name.value === 'light'"
 					contain
-					max-height="64"
-					max-width="64"
+					max-height="60"
+					max-width="60"
 					src="./assets/logo.png"
 				></v-img>
 			</v-toolbar-title>
@@ -30,45 +30,33 @@
 			</v-app-bar-nav-icon>
 
 			<v-toolbar-items class="hidden-xs">
-
-				<div
-				class="menu-btn"
-				v-for="items in items">
+				<div class="menu-btn" v-for="items in items">
 					<v-btn
-					v-if="items.title !== 'Usługi'"
-					flat
-					:key="items.value"
-					:to="items.link"
-					>{{ items.title }}</v-btn
-				>
-				<v-menu
-				v-else
-      open-on-hover
-    >
-      <template v-slot:activator="{ props }">
-        <v-btn
-          color="primary"
-          v-bind="props"
-		 
-        >
-          Usługi
-        </v-btn>
-      </template>
+						v-if="items.title !== 'Usługi'"
+						flat
+						:key="items.value"
+						:to="items.link"
+						>{{ items.title }}</v-btn
+					>
+					<v-menu v-else open-delay="100" open-on-hover>
+						<template v-slot:activator="{ props }">
+							<v-btn color="primary" v-bind="props"> Usługi  <v-icon icon="mdi:mdi-chevron-down" /> </v-btn>
+						</template>
 
-      <v-list>
-        <v-list-item
-		flat
-		link
-		class="list-item"
-          v-for="(item, index) in items.children"
-          :key="index"
-          :value="index"
-		  :to="item.link"
-        >
-         {{ item.title }}
-        </v-list-item>
-      </v-list>
-    </v-menu>
+						<v-list>
+							<v-list-item
+								flat
+								link
+								class="list-item"
+								v-for="(item, index) in items.children"
+								:key="index"
+								:value="index"
+								:to="item.link"
+							>
+								{{ item.title }}
+							</v-list-item>
+						</v-list>
+					</v-menu>
 				</div>
 			</v-toolbar-items>
 		</v-app-bar>
@@ -82,30 +70,24 @@
 			temporary
 		>
 			<v-list>
-			<div v-for="items in items">
-				<v-btn
-				v-if="items.title !== 'Usługi'"
-					size="x-large"
-					flat
-					block
-					@click="drawer = !drawer"
-					nav
-					
-					:key="items.title"
-					:to="items.link"
-					>{{ items.title }}</v-btn
-				>
-				<div class="mobile-menu" v-else>
-
-					<v-btn size="x-large"
-					flat
-					block
-					v-for="item in items.children">
-{{ item.title }}
-				</v-btn>
+				<div v-for="items in items">
+					<v-btn
+						v-if="items.title !== 'Usługi'"
+						size="x-large"
+						flat
+						block
+						@click="drawer = !drawer"
+						nav
+						:key="items.title"
+						:to="items.link"
+						>{{ items.title }}</v-btn
+					>
+					<div class="mobile-menu" v-else>
+						<v-btn size="x-large" flat block @click="drawer = !drawer"  v-for="item in items.children" :to="item.link">
+							{{ item.title }}
+						</v-btn>
+					</div>
 				</div>
-			
-			</div>
 			</v-list>
 		</v-navigation-drawer>
 		<!-- Sizes your content based upon application components -->
@@ -119,16 +101,21 @@
 			<v-container class="footer-width mx-auto">
 				<v-row class="justify-space-between my-4 text-left">
 					<v-col cols="12" sm="4" md="4" class="py-5 pr-0 text-left">
-						<v-img class="img-footer" src="./assets/plazmet.png"></v-img>
+						<v-img
+							class="img-footer"
+							src="./assets/whitelogo.png"
+						></v-img>
 						<div class="pl-3">
 							<p class="text-body-2">Ciesielska 2/lok.12</p>
 							<p><b>15-542 Białystok</b></p>
 							<p class="my-4">
 								<a href="tel:+48 602 615 104">+48 602 615 104</a></p
 							>
-							
+
 							<p class="footer-mail">
-								<a href="mailto:plazmetbialystok@o2.pl">plazmetbialystok@o2.pl</a></p
+								<a href="mailto:plazmetbialystok@o2.pl"
+									>plazmetbialystok@o2.pl</a
+								></p
 							>
 						</div>
 					</v-col>
@@ -149,9 +136,7 @@
 					<v-col cols="12" sm="3" md="4" class="py-5 pr-sm-4 align-center">
 						<h2>O firmie</h2>
 						<p class="py-5 pr-0"
-							>Firma powstała w roku 2015. Świadczymy fachowe usługi „abrasive
-							waterjet” - czyli cięcie strumieniem wody w najróżniejszych
-							materiałach oraz pod różnymi kątami.</p
+							><b>Plazmet</b> to firma założona w 2011 roku, specjalizująca się w precyzyjnych usługach cięcia tlenem, wodą, piłą taśmową oraz spawania. <br/> <br/> Dzięki indywidualnemu podejściu do każdego zlecenia, zapewniamy najwyższą jakość usług, dopasowaną do potrzeb naszych klientów.</p
 						>
 					</v-col>
 				</v-row>
@@ -175,7 +160,6 @@ const items = [
 			{ title: 'Cięcie tlenem', value: 'plazmet', link: '/ciecie-tlenem' },
 			{ title: 'Cięcie wodą', value: 'waterjet', link: '/waterjet' },
 		],
-	
 	},
 	{ title: 'Galeria', value: 'gallery', link: '/galeria' },
 	{ title: 'Kontakt', value: 'about', link: '/about' },
@@ -189,8 +173,8 @@ function toggleTheme() {
 </script>
 
 <style>
-.padding{
-	padding: 5px 20px!important;
+.padding {
+	padding: 5px 20px !important;
 }
 .v-footer .v-row {
 	margin: 0;
@@ -208,21 +192,18 @@ function toggleTheme() {
 .footer-mail {
 	word-break: break-all;
 }
-.menu-btn{
-	
-	display:flex;
+.menu-btn {
+	display: flex;
 }
-.mobile-menu{
+.mobile-menu {
 	position: relative;
 }
-.mobile-menu:before{
+.mobile-menu:before {
 	content: '';
-  position: absolute;
-  border-bottom: 5px solid black;
-
-  
+	position: absolute;
+	border-bottom: 5px solid black;
 }
-.list-item{
+.list-item {
 	padding: 20px 20px !important;
 }
 .v-switch {
