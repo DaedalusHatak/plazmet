@@ -2,7 +2,7 @@
   <div
     class="d-flex flex-column fill-height block align-center background justify-center text-white"
   >
-    <h1 class="text-h6 text-sm-h3  text-lg-h2">{{ props.heading }}</h1>
+    <h1 class="text-h6 text-sm-h3  text-lg-h2">{{ props.heading || "Plazmet – Profesjonalne usługi cięcia! Cięcie płytek, gresu, obróbka metali!" }}</h1>
     <slot> </slot>
   </div>
 </template>
