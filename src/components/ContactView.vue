@@ -24,13 +24,13 @@
 					<p class="py-2 links my-2">
 						<a :href="`tel:${waterjet[0]}`">{{ waterjet[0] }}</a>
 					</p>
-					<p class="py-2 links">
+					<p class="py-2 links ">
 						<a class="mail" :href="`mailto:${waterjet[1]}`"
 							>{{ waterjet[1].toUpperCase() }}
 						</a></p
 					>
 				</div>
-				<p class="pt-sx-8 pb-sx-12"
+				<p class="pt-sx-8 pb-sx-12 "
 					><v-img
 						class="d-sm-none d-flex"
 						eager
